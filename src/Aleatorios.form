@@ -2,6 +2,79 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
+    <Container class="javax.swing.JDialog" name="dialog_historial">
+      <Properties>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[175, 311]"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="panel_dialog" alignment="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="panel_dialog" alignment="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="panel_dialog">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="etiqueta_historial" pref="154" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jScrollPane1" alignment="0" pref="0" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="etiqueta_historial" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" pref="283" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="etiqueta_historial">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ultimos n&#xfa;meros generados"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JList" name="lista_historial">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="menu_fichero">
@@ -17,6 +90,15 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItem_salirActionPerformed"/>
               </Events>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuItem_guardar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Guardar"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItem_guardarActionPerformed"/>
+              </Events>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="menu_edicion">
@@ -27,9 +109,18 @@
             <MenuItem class="javax.swing.JMenuItem" name="menuItem_borrar">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Borrar"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItem_borrarActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuItem_historial">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Historial"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItem_historialActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -87,7 +178,7 @@
                           <Component id="textField_resultado" min="-2" pref="96" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                           <Component id="boton_generar" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -95,16 +186,24 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="etiqueta_n2" max="32767" attributes="0"/>
-                      <Component id="etiqueta_n1" min="-2" pref="66" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="spinner_n1" min="-2" pref="95" max="-2" attributes="0"/>
-                      <Component id="spinner_n2" min="-2" pref="95" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="etiqueta_n2" max="32767" attributes="0"/>
+                              <Component id="etiqueta_n1" min="-2" pref="66" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="spinner_n1" min="-2" pref="95" max="-2" attributes="0"/>
+                              <Component id="spinner_n2" min="-2" pref="95" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="checkBox_primos" min="-2" pref="124" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -126,8 +225,11 @@
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Component id="textField_resultado" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="boton_generar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="42" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="boton_generar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="checkBox_primos" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="43" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -140,14 +242,14 @@
         </Component>
         <Component class="javax.swing.JLabel" name="etiqueta_n1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="numero 1"/>
+            <Property name="text" type="java.lang.String" value="n&#xfa;mero 1"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JSpinner" name="spinner_n1">
         </Component>
         <Component class="javax.swing.JLabel" name="etiqueta_n2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="numero 2"/>
+            <Property name="text" type="java.lang.String" value="n&#xfa;mero 2"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JSpinner" name="spinner_n2">
@@ -169,6 +271,11 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boton_generarActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="checkBox_primos">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="N&#xfa;meros primos"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
