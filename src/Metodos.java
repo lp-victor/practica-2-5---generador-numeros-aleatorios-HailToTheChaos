@@ -36,7 +36,6 @@ public class Metodos {
                 file.write(entrada.get(i));
                 file.write("\n");
             }
-
             if (file != null) {
                 file.close();
             }
